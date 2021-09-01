@@ -1,0 +1,27 @@
+[
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\Toontanks\\\\Toontanks.Build.cs",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_Default\\Toontanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\Toontanks\\\\Toontanks.cpp",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_Default\\Toontanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\Toontanks\\\\Toontanks.h",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_Default\\Toontanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\Toontanks\\\\ToontanksGameModeBase.cpp",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_Default\\Toontanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\Toontanks\\\\ToontanksGameModeBase.h",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_Default\\Toontanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	}
+]
