@@ -42,24 +42,5 @@ which is the CaspuleComp, so the BaseMesh can inherit from it.*/
  	ProjectileSpawnPoint->SetupAttachment(TurretMesh);// follows turret mesh
 }
 
-// Called when the game starts or when spawned
-void APawnBase::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void APawnBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
-// Called to bind functionality to input
-void APawnBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
+//Remove Setup, BeginPlay, Tick and placed in PawnTank.cpp. (child class)
 

@@ -95,20 +95,6 @@ public:
 		/*INSTANCE ONLY: will replace the Defaults only when an instance of the class or parent is created
                    			that is, anything placed in the actual map/level.*/
 		//BLUEPRINT READWRITE/READONLY: These will edit the BP functionality, without which is mainly editor functionality. 
-	
-	
-	
-	
-	
-	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 };
+
+// Removed Setup, BeginPlay, Tick and moved into PawnTank (child class)

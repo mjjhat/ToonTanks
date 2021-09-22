@@ -10,6 +10,16 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
 	},
 	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\ToonTanks\\\\Pawns\\\\PawnTank.cpp",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\ToonTanks\\\\Pawns\\\\PawnTank.h",
+		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.210.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
+	},
+	{
 		"file": "C:\\\\UnrealProjects\\\\ToonTanks\\\\Toontanks\\\\Source\\\\ToonTanks\\\\ToonTanks.Build.cs",
 		"command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX64\\x64\\cl.exe @\"C:\\UnrealProjects\\ToonTanks\\Toontanks\\.vscode\\compileCommands_ToonTanks\\ToonTanks.210.rsp\"",
 		"directory": "C:\\Program Files\\Epic Games\\UE_4.27\\Engine\\Source"
