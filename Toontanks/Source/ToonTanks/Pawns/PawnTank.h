@@ -39,9 +39,20 @@ private:
 	FVector MoveDirection;// deltalocation for actor local rotation Offset
     FQuat RotationDirection;// delalocation for actor local rotation
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))	
 	float MoveSpeed = 100.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float RotateSpeed = 100.0f;
 		//These will control the speed values of Rotation and movement
+		/* 	EditAnywhere
+				PRO:in the middle of testing can jump out and make adjustments
+				CON: If in a team it may be too available for everyone to play with, so if they
+					are not aware of what you trying to accomplish, they end up messing up your
+					settings and balance. 
+
+			BlueprintReadWrite: Chose this so that he can implement code later on
+				Example: if he wants to implement speed boosts to the tank. 
+		*/
 
 
     void CalculateMoveInput(float Value);
