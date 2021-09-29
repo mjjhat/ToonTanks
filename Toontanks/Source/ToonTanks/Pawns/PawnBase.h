@@ -21,6 +21,7 @@
 	It is like any class declaration, and is called "forward" since it is declared
 	before it is used, like any other class. */
 class UCapsuleComponent; //frwrd declare
+class AProjectileBase;
 
 
 UCLASS()
@@ -69,6 +70,12 @@ WHY IN PAWNBASE?
 			* meta =... etc. is added because this component is in the private section. Thus it needs
 				code to access it, otherwise the compiler will say that it cannot compile it due to
 				it being in the private properites section.*/
+
+
+//VARIABLES
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AProjectileBase> ProjectileClass;
+	//Making options available
 
 public:
 		// Sets default values for this pawn's properties
