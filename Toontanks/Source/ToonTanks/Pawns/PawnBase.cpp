@@ -47,8 +47,19 @@ HIERARCHY: This is at top because it is the root component, the parent on top fr
 		Follows TurretMesh*/
 }
 
-void APawnBase::RotateTurretFunction(FVector LookAtTarget)
+void APawnBase::RotateTurret(FVector LookAtTarget)
 {
+	FVector LookAtTargetCleaned = FVector(LookAtTarget.X, LookAtTarget.Y, TurretMesh->GetComponentLocation().Z);
+	FVector StartLocation = TurretMesh->GetComponentLocation();
+		//The above code could be placed below, but it would be too long and cluttered
+	FRotator TurretRotation = FVector(LookAtTargetCleaned - StartLocation).Rotation();
+	/*	Will allow TurretMesh rotation and make sure rotation is not up or down
+		We are minusing the Look at Target (X,Y, and TurretMesh Location) by the start 
+		Location to clean up our rotation and make it precise, converting our equation into
+		a rotation (.Rotation)*/
+	TurretMesh->SetWorldRotation(TurretRotation);// pass in above
+	
+	
 	//Update TurretMesh rotation to face towards the LookAtTarget passed in from the Child Classes.
 	//TurretMesh->SetWorldRotation()...	
 }
@@ -56,6 +67,7 @@ void APawnBase::RotateTurretFunction(FVector LookAtTarget)
 void APawnBase::Fire()
 {
 	// Get ProjectileSpawnPoint Location && Rotation -> Spawn Projectile Class at Location firing towards Rotation. 
+	UE_LOG(LogTemp, Warning, TEXT("%s: Fire Condition Success"), *GetOwner()->GetName());
 }
 
 void APawnBase::HandleDestruction()

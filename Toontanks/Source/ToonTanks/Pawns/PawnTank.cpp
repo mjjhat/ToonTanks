@@ -28,6 +28,16 @@ APawnTank::APawnTank()
 void APawnTank::BeginPlay()
 {
 	Super::BeginPlay();	
+    PlayerControllerRef= Cast<APlayerController>(GetController());
+/*      We have casted out before, but this time to cast out to get the active player controller
+        that the world created in order to handle the playerpawn
+            -this is then being stored as our PlayerControllerRef */
+}
+
+void APawnTank::HandleDestruction() 
+{
+    Super::HandleDestruction();
+    // Hide player. TODO - Create new function to handle this.
 }
 
 // Called every frame
@@ -56,6 +66,21 @@ void APawnTank::Tick(float DeltaTime)
                 -He suggests swapping the Rotate and Move around a few times later on to see how
                     the order can change the feel of thing and see what you like best. At this point
                     it is more about personal taste. */
+        if(PlayerControllerRef)
+        // Casts out into world from player tank into world
+        {
+            FHitResult TraceHitResult;
+            PlayerControllerRef->GetHitResultUnderCursor(
+                ECC_Visibility, 
+                false, //don't need complex tracing-like specific limbs or parts
+                TraceHitResult
+            );
+    /*          Will trace the cursors screen location into the world space and find
+                the resulting location casted out */
+            FVector HitLocation = TraceHitResult.ImpactPoint;// end location for our tank turret to look at
+           
+            RotateTurret(HitLocation);// alrady have a class in the parent, only prove FVector
+        }
 }
 
 
@@ -74,8 +99,14 @@ void APawnTank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
         FUNCTION: The function will point to the APawnTank class using CalculateMoveInput function to move the tank
             when pressed*/
     PlayerInputComponent->BindAxis("Turn", this, &APawnTank::CalculateRotateInput);/*
-        As Above, but with the "Turn" key binding*/
-
+        As Above, but with the "Turn" key binding- has value of 0-1 for incremental changes
+        like as those found for movement.*/
+    PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &APawnTank::Fire);
+    /*  Single press events do not need an increment value count, such as firing a gun, 
+        jumping, interaction pressed. 
+        IE_Pressed: Tells us to do a function upon pressing a bound key (such as space
+                    bar = fire gun or interact: thus will go to FireGun function)
+            -we can also have logic for "When released"-> IE_Pressed*/
 }
 
 void APawnTank::CalculateMoveInput(float Value)

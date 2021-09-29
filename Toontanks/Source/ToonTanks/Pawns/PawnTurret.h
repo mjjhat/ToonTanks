@@ -56,6 +56,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;	
 
+	virtual void HandleDestruction() override;
+		//expecting to be overrided from base class
+
 
 // *****TEST CODE*****
 //	void TEST() override;/*

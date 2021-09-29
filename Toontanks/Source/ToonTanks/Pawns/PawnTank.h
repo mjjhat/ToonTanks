@@ -60,6 +60,9 @@ private:
 				when you realize that you do need it. 
 				Example: if the prgrammer wants to implement speed boosts to the tank. */
 		
+	APlayerController* PlayerControllerRef;
+
+
     void CalculateMoveInput(float Value); /*
       	MOVEMENT: Will be bound to a movement input funtion, so that when we press a button 
 		  			to move the tank,a value (axis value) will be returned to the game so 
@@ -89,6 +92,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;	
+
+	virtual void HandleDestruction() override;
 	
 };
 

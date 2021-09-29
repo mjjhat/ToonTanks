@@ -76,7 +76,7 @@ public:
 
 protected: 
 
-	void RotateTurretFunction(FVector LookAtTarget);// Turret rotation for player and AI
+	void RotateTurret(FVector LookAtTarget);// Turret rotation for player and AI
 
 	void Fire();// Will create projectile when we have a projectile class implemented
 
