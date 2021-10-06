@@ -80,6 +80,7 @@ WHY IN PAWNBASE?
 public:
 		// Sets default values for this pawn's properties
 	APawnBase();
+	virtual void HandleDestruction();// How pawn reacts when destroyed
 
 protected: 
 
@@ -87,7 +88,7 @@ protected:
 
 	void Fire();// Will create projectile when we have a projectile class implemented
 
-	virtual void HandleDestruction();// How pawn reacts when destroyed
+	
 
 
 

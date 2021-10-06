@@ -7,6 +7,7 @@
 #include "ProjectileBase.generated.h"
 
 class UProjectileMovementComponent;
+// used below and given names
 
 UCLASS()
 class TOONTANKS_API AProjectileBase : public AActor
@@ -23,8 +24,8 @@ private:
 		//Will call up visual representation of Projectile Component
 	UPROPERTY(EditDefaultsOnly, Category = "Damage")
 	TSubclassOf<UDamageType> DamageType;
-	/*	A Class template that UE has built in that calculates damage for us.
-		so we call up the SubclassOF, the DamageType Class, and then name it
+	/*	A Class template that UE has built in that calculates damage for us
+		so we call up the SubclassOf, the DamageType Class, and then name it.
 		   -This will provide us access in UE to anything that is a subclass of
 			UDamageType.
 		   -This limits the options we will see, which will make it easier to find

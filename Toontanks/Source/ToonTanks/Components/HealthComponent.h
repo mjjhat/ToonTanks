@@ -54,10 +54,10 @@ protected:
 
 	UFUNCTION()
 	void TakeDamage(
-		AActor* DamagedActor, // who is being hurt
+		AActor* DamageActor, // who is being hurt
 		float Damage, //how much it hurts
 		const UDamageType* DamageType, //bullet-piercing
-		AController* InstigateBy, //Pulled the trigger
+		AController* InstigatedBy, //Pulled the trigger
 		AActor* DamageCauser// The gun whose trigger was pulled
 		);
 	// Will be binding to an existing function: Any damage event on the owning pawn.
