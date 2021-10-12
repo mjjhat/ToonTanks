@@ -28,7 +28,7 @@ APawnTank::APawnTank()
 void APawnTank::BeginPlay()
 {
 	Super::BeginPlay();	
-    PlayerControllerRef= Cast<APlayerController>(GetController());
+    PlayerControllerRef = Cast<APlayerController>(GetController());
 /*      We have casted out before, but this time to cast out to get the active player controller
         that the world created in order to handle the playerpawn
             -this is then being stored as our PlayerControllerRef */
@@ -38,6 +38,8 @@ void APawnTank::HandleDestruction()
 {
     Super::HandleDestruction();
     // Hide player. TODO - Create new function to handle this.
+    Destroy();// call to destroy the pawn-> but will shoot us to default camera
+    
 }
 
 // Called every frame

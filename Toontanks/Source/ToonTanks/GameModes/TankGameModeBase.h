@@ -37,6 +37,10 @@ class TOONTANKS_API ATankGameModeBase : public AGameModeBase
 
 	protected:
 
+		UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Game Loop")
+		int32 StartDelay = 3;
+			
+
 		virtual void BeginPlay() override;
 		// will track more complicated functions here, such as how many tank targets begin
 		// can also include round timer, lives for each player. 

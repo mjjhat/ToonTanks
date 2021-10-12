@@ -86,7 +86,7 @@ void ATankGameModeBase::HandleGameOver(bool PlayerWon)
 int32 ATankGameModeBase::GetTargetTurretCount()
 // This function was made so to move the variable below out of Beginplay, making it shorter
 {
-    TArray<AActor*> TurretActors;
+    TArray<AActor *> TurretActors;
     UGameplayStatics::GetAllActorsOfClass(
         GetWorld(), // Will get world context object: a const UObject* [Name]-> GetWorld()
         APawnTurret::StaticClass(),//TSubclassOf<AActor> [Name]->APawnTurret::StaticClass()
