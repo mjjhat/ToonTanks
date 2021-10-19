@@ -22,7 +22,7 @@
 	before it is used, like any other class. */
 class UCapsuleComponent; //frwrd declare
 class AProjectileBase;
-
+class UHealthComponent;
 
 UCLASS()
 class TOONTANKS_API APawnBase : public APawn
@@ -70,12 +70,18 @@ WHY IN PAWNBASE?
 			* meta =... etc. is added because this component is in the private section. Thus it needs
 				code to access it, otherwise the compiler will say that it cannot compile it due to
 				it being in the private properites section.*/
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UHealthComponent* HealthComponent;
 
 //VARIABLES
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
 	//Making options available
+
+/*	Can place effects in base class and override the effect in the child classes for more
+	specific effects*/
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	UParticleSystem* DeathParticle;
 
 public:
 		// Sets default values for this pawn's properties

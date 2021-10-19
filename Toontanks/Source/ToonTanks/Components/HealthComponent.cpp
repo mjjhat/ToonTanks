@@ -7,7 +7,8 @@
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
-UHealthComponent::UHealthComponent()
+UHealthComponent::UHealthComponent()// constructor- leave most things out, place them in BeginPlay
+// Functions do go in here, but make sure the right ones are here, else may crash game.
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -21,7 +22,6 @@ UHealthComponent::UHealthComponent()
 void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
 	Health = DefaultHealth;
 	/*	Health is equal to what we had declared and exposed (DefaultHealth) value in the .h
 		-	Every time we start the game, the health will be updated to set default health.*/	
@@ -45,6 +45,8 @@ void UHealthComponent::BeginPlay()
 void UHealthComponent::TakeDamage(AActor* DamageActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser)
 {
 
+	
+	
 	if (Damage == 0 || Health <= 0) // To insure death sequence if below 0 or equal to it
 	{return;}
 	// if(Damage == 0 ) {return;}// old code- change above for instruction sake
@@ -58,6 +60,9 @@ void UHealthComponent::TakeDamage(AActor* DamageActor, float Damage, const UDama
 		-	Insures that health cannot drop below 0, or above max health cap. 
 		-	0.0f tells us that this is a float number that the Fmath requires- otherwise
 			we would get an error-- we need an integer type.*/
+
+		UE_LOG(LogTemp, Warning, TEXT(" Your Health is %f"), Health);
+
 
 	if (Health <= 0)
 		// health lower or equal to zereo? If so- ActorDied function

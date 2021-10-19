@@ -28,7 +28,7 @@ void APawnTurret::BeginPlay()
         parameters and such found between its "()") to fill in. */
 
     PlayerPawn = Cast<APawnTank>(UGameplayStatics::GetPlayerPawn(this, 0));
-        //Casts own to find the player Pawn from APawnTank using the WorldContext
+        //Casts out to find the player Pawn from APawnTank using the WorldContext
 
 /*      Returns reference to player pawn if valid result is found
             -two arguements: WorldContextUOBject, PlayerIndex
@@ -84,7 +84,9 @@ If Player ==Null || is Dead ---> Then Bail!!
 
 If Player IS in range Then FIRE!!!*/
 
-    if(!PlayerPawn)/* if there is not a player Pawn, Do not use this function*/
+    if(!PlayerPawn || !PlayerPawn->GetIsPlayerAlive())/* if there is not a player Pawn, Do not use this function*/
+    // PlayerPawn (point to/get)-> GetIsPlayerAlive: points to class and function!  
+    //Thus: if No PlayerPawn, or PlayerPawn = not alive, return. 
         {
             return;// need to check if player is alive!
         }

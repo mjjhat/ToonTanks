@@ -8,6 +8,7 @@
 
 class APawnTurret;
 class APawnTank;
+class APlayerControllerBase;
 
 UCLASS()
 class TOONTANKS_API ATankGameModeBase : public AGameModeBase
@@ -20,6 +21,8 @@ class TOONTANKS_API ATankGameModeBase : public AGameModeBase
 		int32 TargetTurrets = 0;
 			// these will be for destructable tanks
 			//	the second will keep track how many turrets need to be destroyed.
+		APlayerControllerBase* PlayerControllerRef;
+			//Will be used in conjunction with PlayerControllerBase
 
 		int32 GetTargetTurretCount();//To shorten some code
 		void HandleGameStart();

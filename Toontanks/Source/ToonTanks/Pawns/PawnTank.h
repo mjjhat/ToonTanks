@@ -61,6 +61,7 @@ private:
 				Example: if the prgrammer wants to implement speed boosts to the tank. */
 		
 	APlayerController* PlayerControllerRef;
+	bool bIsPlayerAlive = true;// Will stop player movement if player is killed
 
 
     void CalculateMoveInput(float Value); /*
@@ -89,6 +90,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void HandleDestruction() override;
+
+	bool GetIsPlayerAlive();
+	/* Could put the IsPlayerAlive bool here, but not as safegaurded from accidentally being 
+	called up by another class. Thus if we create a public class that calls it up, we can 
+	make it available to other parts of the game, while keeping is safeguarded.*/
 
 protected:
 	// Called when the game starts or when spawned

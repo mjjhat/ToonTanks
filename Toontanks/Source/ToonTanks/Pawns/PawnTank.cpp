@@ -37,10 +37,35 @@ void APawnTank::BeginPlay()
 void APawnTank::HandleDestruction() 
 {
     Super::HandleDestruction();
-    // Hide player. TODO - Create new function to handle this.
-    Destroy();// call to destroy the pawn-> but will shoot us to default camera
+/*      Hide player. TODO - Create new function to handle this.
+    //Destroy();// call to destroy the pawn-> but will shoot us to default camera
+        Removed Destroy because we need to call a few things which may crash UE 
+            if we destroyed the pawn we are trying to call*/
     
+    bIsPlayerAlive = false;// if tank is destroyed, Alive now = false
+
+    SetActorHiddenInGame(true);// hides the player if no longer alive
+    SetActorTickEnabled(false);
+/*      Stops the tick function if no longer alive- and saves a little performance too!
+        Stops move/rotate because Tick has these functions there. 
+        CAMERA: Does not jump back to default camera because still focused on the (hidden)
+                Player*/
+
 }
+
+bool APawnTank::GetIsPlayerAlive()
+/*  This class is here to safegaurd the bIsPlayerAlive variable while making it available to
+other functions to call it up and use it, or any other class that may want to use it.
+
+    Other classes may need to know the state of the player, so they can access this to see if
+    true or false
+    
+    Thus can be called upon, but not so easily changed from the outside this way*/
+{
+    return bIsPlayerAlive;
+}
+
+
 
 // Called every frame
 void APawnTank::Tick(float DeltaTime)

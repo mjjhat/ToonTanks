@@ -35,6 +35,9 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Damage", meta = (AllowPrivateAccess = "true"))
 	float Damage = 50;
 		//These will set our projectile speed and damage
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	UParticleSystem* HitParticle;
+		//Provide projectile effects when hit something. 
 
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);

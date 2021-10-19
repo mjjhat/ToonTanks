@@ -4,6 +4,8 @@
 #include "ToonTanks/Pawns/PawnBase.h"
 #include "Components/CapsuleComponent.h"
 #include "ToonTanks/Actors/ProjectileBase.h"
+#include "ToonTanks/Components/HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APawnBase::APawnBase()
@@ -46,6 +48,9 @@ HIERARCHY: This is at top because it is the root component, the parent on top fr
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
  	ProjectileSpawnPoint->SetupAttachment(TurretMesh);/*
 		Follows TurretMesh*/
+	
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	// No transform, we do not have to point to any object and setup attachement like above.
 }
 
 void APawnBase::RotateTurret(FVector LookAtTarget)
@@ -93,10 +98,18 @@ void APawnBase::HandleDestruction()
 	//--- Universal Functionality --
 	// Play death effects particle, sound and camera shake.
 
+	UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation());
+/*	This pawn is affected,
+	Particle Type: Death Particle,
+	Location?: The actor's location
+	Rotation: not needed, so we forgo the argument. 
+	Will create particle effect when the pawn is destroyed.
+
 	// --- Then do Child overrides ---
 	//--- PawnTurret- Inform GameMode Turret Died -> Then Destroy() self.
 
 	// -- PawnTank- Inform GameMode Player died -> Then Hide() all component && stop movement input
+*/
 }
 
 

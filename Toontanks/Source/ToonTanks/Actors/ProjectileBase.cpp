@@ -60,9 +60,13 @@ void AProjectileBase::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UP
 			DamageType// Clas that describes the damage that was done
 		);
 		// Code for applying and recieving Damage
+
+		UGameplayStatics::SpawnEmitterAtLocation(this, HitParticle, GetActorLocation());
+		// If hit, make "boom"
+		Destroy();
 	}
 	
-	Destroy();
+	
 }
 
 
