@@ -82,6 +82,8 @@ WHY IN PAWNBASE?
 	specific effects*/
 	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* DeathParticle;
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase* DeathSound;// reusing sound code for pawn destruction sound. 
 
 public:
 		// Sets default values for this pawn's properties

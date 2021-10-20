@@ -110,6 +110,9 @@ void APawnBase::HandleDestruction()
 
 	// -- PawnTank- Inform GameMode Player died -> Then Hide() all component && stop movement input
 */
+	UGameplayStatics::SpawnSoundAtLocation(this, DeathSound, GetActorLocation());
+
+
 }
 
 
